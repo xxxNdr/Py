@@ -2,7 +2,7 @@ def ep(evento:str, *partecipanti:str):
     ris = f"Evento: {evento}\n"
     for p in partecipanti:
         ris += f" - {p}\n"
-    return ris
+    ereturn ris
 
 
 
