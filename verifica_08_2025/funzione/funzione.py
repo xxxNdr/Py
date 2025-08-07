@@ -10,7 +10,7 @@ def t(testo : str):
     lunghezzaTotale = len(testo)
 
     parole = testo.split()
-    paroleDiverse = set(parole)
+    paroleDiverse = set(parole)     # insieme non ordinato di elementi unici
 
     paroleMaiuscola = []
 
