@@ -1,7 +1,8 @@
 class Evento:
-    def __init__(s, nome:str, data:str, posti_totali:int, prezzo:float) -> None:
+    def __init__(s, nome:str, data:str, luogo:str, posti_totali:int, prezzo:float) -> None:
         s.nome = nome
         s.data = data
+        s.luogo = luogo
         s.posti_totali = posti_totali
         s.posti_prenotati = 0
         s.prezzo = prezzo
@@ -40,7 +41,7 @@ class Evento:
     def ottieni_info_evento(s):
         tot = s.posti_prenotati * s.prezzo
         potenziale = s.posti_disponibili() * s.prezzo
-        print(f"Evento: {s.nome}\nData: {s.data}\nPosti totali: {s.posti_totali}\nPosti prenotati: {s.posti_prenotati}\nIncasso attuale: {tot} €\nIncasso stimato: > {potenziale} €\n")
+        print(f"Evento: {s.nome}\nData: {s.data}\nLuogo: {s.luogo}\nPosti totali: {s.posti_totali}\nPosti prenotati: {s.posti_prenotati}\nIncasso attuale: {tot} €\nIncasso stimato: > {potenziale} €\n")
 
 
 
@@ -48,7 +49,7 @@ class Evento:
 
 
 
-e1 = Evento("Kate Perry", "2/11/2025", 18000, 74.75)
+e1 = Evento("Kate Perry", "2/11/2025","Unipol Arena", 18000, 74.75)
 
 print(e1.posti_disponibili())
 e1.prenota(10)

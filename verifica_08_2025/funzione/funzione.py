@@ -1,17 +1,30 @@
+
+
 def t(testo : str):
+
+    alnum = 0
+    for x in testo:
+        if x.isalnum():
+            alnum += 1
+
     lunghezzaTotale = len(testo)
+
     parole = testo.split()
     paroleDiverse = set(parole)
+
     paroleMaiuscola = []
+
     for parola in testo.split():
         if parola[0].isupper():
             paroleMaiuscola.append(parola)
     letterA = testo.count("a") + testo.count("A")
-    bytes = len(testo.encode()) 
+    bytes = len(testo.encode())
+
     print()
     print(repr(testo))
     print()
     print(f"Lunghezza Totale: {lunghezzaTotale} caratteri")
+    print(f"Caratteri alfanumerici: {alnum}")
     print(f"Parole distinte: {len(paroleDiverse)} parole")
     print(f"Parole con maiuscola: {len(paroleMaiuscola)} = {', ' .join(paroleMaiuscola)}")
     print(f"La lettera 'a' compare {letterA} volte")
