@@ -14,21 +14,22 @@ def t(testo : str):
 
     paroleMaiuscola = []
 
-    for parola in testo.split():
-        if parola[0].isupper():
-            paroleMaiuscola.append(parola)
+    for x in testo.split():
+        if x[0].isupper():
+            paroleMaiuscola.append(x)
+
     letterA = testo.count("a") + testo.count("A")
     bytes = len(testo.encode())
 
     print()
     print(repr(testo))
     print()
-    print(f"Lunghezza Totale: {lunghezzaTotale} caratteri")
+    print(f"Lunghezza totale: {lunghezzaTotale} caratteri")
     print(f"Caratteri alfanumerici: {alnum}")
     print(f"Parole distinte: {len(paroleDiverse)} parole")
     print(f"Parole con maiuscola: {len(paroleMaiuscola)} = {', ' .join(paroleMaiuscola)}")
     print(f"La lettera 'a' compare {letterA} volte")
-    print(f"Il numero di bytes per memorizzare questa stringa è di {bytes}")
+    print(f"Il numero di byte per memorizzare questa stringa è di {bytes}")
     print()
 
 t('''Nel mezzo del cammin di nostra vita
