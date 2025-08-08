@@ -32,10 +32,11 @@ def t(testo : str):
     print(f"Il numero di byte per memorizzare questa stringa è di {bytes}")
     print()
 
-t('''Nel mezzo del cammin di nostra vita
-mi ritrovai per una selva oscura,
-chè la diritta via era smarrita.
-  
-Ahi quanto a dir qual era è cosa dura
-esta selva selvaggia e aspra e forte
-che nel pensier rinova la paura!''')
+t( """
+    Nel mezzo del cammin di nostra vita
+    mi ritrovai per una selva oscura, 
+    chè la diritta via era smarrita.
+
+    Ahi quanto a dir qual era è cosa dura
+    esta selva selvaggia e aspra e forte
+    che nel pensier rinova la paura!""" )
