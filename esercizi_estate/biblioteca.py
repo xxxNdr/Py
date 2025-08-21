@@ -111,16 +111,33 @@ class Biblioteca:
             if hasattr(x, tipo):
                 valore = getattr(x, tipo, "Sconosciuto")
                 if str(query).lower() in str(valore).lower():
-                    # in è più utile di == perché trova corrispondenze pariali
+                    # in è più utile di == perché trova corrispondenze parziali
                     # per una biblioteca è scomodo cercare una corrispondenza esatta
                     ris.append(x)
-                    for x in ris:
-                        print(x.info())
+        if ris:
+            for x in ris:
+                print(x.info())
         else:
-            # else si attiverebbe per ogni libro che non ha l'attributo che cerco
-            # 
             print(f"Nessun {tipo} trovato in {s.nome} dalla tua ricerca\n")
         return ris
+    
+    def all(s):
+        for x in s.catalogo:
+            print(x.info())
+    
+    def pre(s, isbn):
+        for x in s.catalogo:
+            if x.isbn == isbn:
+                return x.presta()
+            print(f"Libro con isbn: {isbn} non trovato in catalogo")
+            return False
+        
+    def res(s, isbn):
+        for x in s.catalogo:
+            if x.isbn == isbn:
+                return x.restituisci()
+            print(f"Libro con isbn: {isbn} non trovato in catalogo")
+            return False
 
 
 b1 = Biblioteca("Biblioteca Salaborsa", catalogo=None)
@@ -133,3 +150,17 @@ for libro in b1.catalogo:
 
 b1.rimuovi(libro2)
 b1.cerca("il nome della rosa", "titolo")
+
+libro3 = Libro("La divina commedia", "Dante Alighieri", 1321, 8817018015, True)
+
+b1.cerca("la divina commedia", "titolo")
+
+
+b2 = Biblioteca("El Ateneo Grand Splendid", catalogo=None)
+
+b1.aggiungi(libro3)
+b1.all()
+
+b1.pre(8831459759)
+b1.res(8831459759)
+
