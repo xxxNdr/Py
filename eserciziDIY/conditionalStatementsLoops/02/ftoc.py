@@ -1,6 +1,8 @@
 temp = (
     input("inserisci la temperatura che vuoi convertire")
     .strip()
+    # strip rimuove gli spazi solo a inizio e fine stringa per questo serve replace
+    # per eliminare eventuali spazi dentro alla stringa
     .lower()
     .replace(" ", "")
 )
